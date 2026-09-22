@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "CoursNest"
+description = "A free bilingual learning platform with 30 practical courses, searchable content, local progress tracking, quizzes, and GitHub Pages-ready static files."
+version = "1.0.0"
+id = "artifacts/coursnest"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18647
+
+[services.development]
+run = "pnpm --filter @workspace/coursnest run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/coursnest", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/coursnest/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18647"
+BASE_PATH = "/"

@@ -1,6 +1,6 @@
-# [Project name]
+# CoursNest
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+CoursNest is a free bilingual learning platform with 30 practical courses, browser-only progress tracking, optional quizzes and GitHub Pages-ready static files.
 
 ## Run & Operate
 
@@ -10,6 +10,7 @@ _Replace the heading above with the project's name, and this line with one sente
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/coursnest run dev` — run the live CoursNest preview
 
 ## Stack
 
@@ -22,23 +23,32 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `index.html`, `courses.html`, `categories.html`, `about.html`, contact/legal pages, `404.html`, `robots.txt` and `sitemap.xml` are the GitHub Pages-ready root site.
+- `courses/` contains exactly 30 course pages and the shared static page shell.
+- `blog/` contains the Learning Center and original articles.
+- `css/style.css`, `js/courses.js` and `js/main.js` are the source of truth for the static site.
+- `artifacts/coursnest/` is the rich live project preview.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The production export is intentionally static HTML/CSS/vanilla JavaScript so it can deploy to GitHub Pages with no build step, backend or paid service.
+- Course content lives locally in `js/courses.js`; lesson completion, quiz scores and language preference use browser local storage.
+- The live artifact preview uses the same product direction but is kept separate from the GitHub Pages export to preserve the zero-dependency deployment requirement.
+- `USERNAME` is a deliberate deployment placeholder in canonical URLs, `robots.txt` and `sitemap.xml`; it must be replaced by the real GitHub username before publishing.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Users can browse exactly 30 practical courses, search and filter the library, switch between English and Arabic, read multi-module lessons, track local progress, take optional quizzes and print a browser-generated completion certificate. The site also includes a Learning Center, about/contact/legal pages and a real root `404.html`.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Keep the core product free to run and independent of paid APIs, databases, authentication, hosting or build services.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Replace `USERNAME` placeholders before submitting the sitemap or publishing.
+- GitHub Pages needs `index.html` at the repository root and case-sensitive relative paths.
+- The course pages are static shells that render their local course data in the browser; keep `js/courses.js` and `js/main.js` beside the root site when exporting.
 
 ## Pointers
 
