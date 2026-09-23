@@ -1,0 +1,1 @@
+- [Google Pages site name](google-pages-site-name.md) — GitHub Pages can expose “GitHub” as the host label; consistent metadata helps, but a custom domain is needed to remove it reliably.

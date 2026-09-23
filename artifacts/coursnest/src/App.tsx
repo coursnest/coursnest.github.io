@@ -113,7 +113,7 @@ function useLocalProgress() {
 }
 
 function Mark({ small = false }: { small?: boolean }) {
-  return <span className={`brand-mark ${small ? 'brand-mark-small' : ''}`} aria-hidden="true"><span /></span>;
+  return <img className={`brand-mark ${small ? 'brand-mark-small' : ''}`} src={`${import.meta.env.BASE_URL}coursnest-logo.jpg`} alt="CoursNest" />;
 }
 
 function Header({ lang, setLang }: { lang: Lang; setLang: (lang: Lang) => void }) {

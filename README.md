@@ -4,13 +4,13 @@ CoursNest is a free, bilingual learning platform with exactly 30 practical cours
 
 ## Zero-dollar GitHub Pages deployment
 
-1. Create a GitHub repository named `USERNAME.github.io`, replacing `USERNAME` with the actual GitHub username. For example, the username `CoursNest` uses `CoursNest.github.io`.
+1. Create a GitHub repository named `coursnest.github.io`.
 2. Upload the contents of this repository with `index.html` at the repository root.
 3. In GitHub, open **Settings → Pages**.
 4. Select **Deploy from a branch**, choose `main`, choose `/ (root)`, and save.
-5. The root site will be available at `https://USERNAME.github.io/`.
+5. The root site will be available at `https://coursnest.github.io/`.
 
-Before publishing, replace the `USERNAME` placeholder in `sitemap.xml`, `robots.txt`, canonical tags and Open Graph URLs with the actual GitHub username. Replace `hello@example.com` on `contact.html` with the real contact address. No backend, database, build step, paid service or API is required for the static site.
+The production hostname is `https://coursnest.github.io/`. Replace `hello@example.com` on `contact.html` with the real contact address. No backend, database, build step, paid service or API is required for the static site.
 
 ## Static structure
 

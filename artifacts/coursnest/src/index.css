@@ -462,6 +462,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .brand-mark:after { width: 17px; height: 31px; top: -7px; left: 14px; transform: rotate(34deg); }
 .brand-mark span:before { width: 24px; height: 11px; top: 11px; left: 4px; border-top: 0; border-left: 0; transform: rotate(-23deg); }
 .brand-mark-small { width: 29px; height: 29px; }
+.brand-mark { object-fit: cover; }
 .main-nav { display: flex; align-items: center; gap: 27px; margin-left: auto; }
 .main-nav a { color: #58716e; font-size: 13px; font-weight: 700; position: relative; }
 .main-nav a:after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px; background: var(--coral); transition: right .25s ease; }
